@@ -65,6 +65,9 @@ static const char *mon0offcmd[] = {"xrandr","--output","LVDS1","--off",0};
 static const char *mon1onleftcmd[]  = {"xrandr","--output","VGA1","--auto","--left-of","LVDS1",0};
 static const char *mon1onrightcmd[]  = {"xrandr","--output","VGA1","--auto","--right-of","LVDS1",0};
 static const char *mon1offcmd[] = {"xrandr","--output","VGA1","--off",0};
+static const char *startwificmd[] = {"st","-e","start-wifi.sh",0};
+static const char *sleepcmd[] = {"st","-e", "sleep.sh", 0};
+static const char *hibernatecmd[] = {"st","-e","hibernate.sh",0};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -100,11 +103,14 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+	{MODKEY,                        XK_F4,     spawn,          {.v=sleepcmd}},
+	{MODKEY,                        XK_F5,     spawn,          {.v=startwificmd}},
 	{MODKEY,                        XK_F7,     spawn,          {.v=mon0oncmd}},
 	{MODKEY|ControlMask,            XK_F7,     spawn,          {.v=mon0offcmd}},
 	{MODKEY,                        XK_F8,     spawn,          {.v=mon1onleftcmd}},
 	{MODKEY|ShiftMask,              XK_F8,     spawn,          {.v=mon1onrightcmd}},
 	{MODKEY|ControlMask,            XK_F8,     spawn,          {.v=mon1offcmd}},
+	{MODKEY,                        XK_F12,    spawn,          {.v=hibernatecmd}},
 	{MODKEY|ShiftMask,              XK_q,      quit,           {0}
     },
 };
