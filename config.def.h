@@ -58,8 +58,8 @@ static const Layout layouts[] = {    /* first entry is default */
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, 0 };
+static const char *termcmd[]  = { "st", 0 };
 static const char *mon0oncmd[]  = {"xrandr","--output","LVDS1","--auto",0};
 static const char *mon0offcmd[] = {"xrandr","--output","LVDS1","--off",0};
 static const char *mon1onleftcmd[]  = {"xrandr","--output","VGA1","--auto","--left-of","LVDS1",0};
@@ -103,6 +103,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+	{MODKEY,                        XK_F1,     spawn,          SHCMD("setxkbmap 'ua' -option ctrl:nocaps") },
+	{MODKEY|ControlMask,            XK_F1,     spawn,          SHCMD("xkbcomp ~/myxkb.dump $DISPLAY") },
 	{MODKEY,                        XK_F4,     spawn,          {.v=sleepcmd}},
 	{MODKEY,                        XK_F5,     spawn,          {.v=startwificmd}},
 	{MODKEY,                        XK_F7,     spawn,          {.v=mon0oncmd}},
