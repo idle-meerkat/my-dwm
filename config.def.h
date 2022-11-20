@@ -68,6 +68,8 @@ static const char *mon1offcmd[] = {"xrandr","--output","VGA1","--off",0};
 static const char *startwificmd[] = {"st","-e","start-wifi.sh",0};
 static const char *sleepcmd[] = {"st","-e", "sleep.sh", 0};
 static const char *hibernatecmd[] = {"st","-e","hibernate.sh",0};
+static const char *swaponcmd[] = {"st","-e", "myswapon.sh", 0};
+static const char *swapoffcmd[] = {"st","-e", "myswapoff.sh", 0};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -112,6 +114,8 @@ static Key keys[] = {
 	{MODKEY,                        XK_F8,     spawn,          {.v=mon1onleftcmd}},
 	{MODKEY|ShiftMask,              XK_F8,     spawn,          {.v=mon1onrightcmd}},
 	{MODKEY|ControlMask,            XK_F8,     spawn,          {.v=mon1offcmd}},
+	{MODKEY,                        XK_F9,     spawn,          {.v=swaponcmd}},
+	{MODKEY|ControlMask,            XK_F9,     spawn,          {.v=swapoffcmd}},
 	{MODKEY,                        XK_F12,    spawn,          {.v=hibernatecmd}},
 	{MODKEY|ShiftMask,              XK_q,      quit,           {0}
     },
