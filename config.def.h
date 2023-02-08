@@ -75,6 +75,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("keym") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -106,7 +107,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{MODKEY,                        XK_F1,     spawn,          SHCMD("setxkbmap 'ua' -option ctrl:nocaps") },
-	{MODKEY|ControlMask,            XK_F1,     spawn,          SHCMD("xkbcomp ~/myxkb.dump $DISPLAY") },
+	{MODKEY|ControlMask,            XK_F1,     spawn,          SHCMD("setxkbmap 'us' -option ctrl:nocaps") },
+	/* {MODKEY|ControlMask,            XK_F1,     spawn,          SHCMD("xkbcomp ~/myxkb.dump $DISPLAY") }, */
 	{MODKEY,                        XK_F4,     spawn,          {.v=sleepcmd}},
 	{MODKEY,                        XK_F5,     spawn,          {.v=startwificmd}},
 	{MODKEY,                        XK_F7,     spawn,          {.v=mon0oncmd}},
