@@ -1,0 +1,11 @@
+1. resize horizontally with keyboard
+2. select window in tile mode by number (?). Like
+    +------------++-------+
+    |1           ||2      |
+    |            ||       |
+    |            |+-------+
+    |            ||3      |
+    |            ||       |
+    +------------++-------+
+    MOD+SHIFT+j+3 would select 3rd, etc
+3. named tags like in screen (ctrl+a'vi<enter>)
