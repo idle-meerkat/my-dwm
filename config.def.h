@@ -72,6 +72,8 @@ static const char *hibernatecmd[] = {"st","-e","hibernate.sh",0};
 static const char *swaponcmd[] = {"st","-e", "myswapon.sh", 0};
 static const char *swapoffcmd[] = {"st","-e", "myswapoff.sh", 0};
 
+#include "selfrestart.c"
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -120,6 +122,7 @@ static Key keys[] = {
 	{MODKEY,                        XK_F9,     spawn,          {.v=swaponcmd}},
 	{MODKEY|ControlMask,            XK_F9,     spawn,          {.v=swapoffcmd}},
 	{MODKEY,                        XK_F12,    spawn,          {.v=hibernatecmd}},
+	{MODKEY|ShiftMask,              XK_r,      self_restart,   {0}},
 	{MODKEY|ShiftMask,              XK_q,      quit,           {0}
     },
 };
@@ -140,4 +143,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
