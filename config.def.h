@@ -6,7 +6,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int focusonwheel       = 0;
-static const char *fonts[]          = { "monospace:size=10" };
+static const char *fonts[]          = { "monospace:size=15" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -109,8 +109,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{MODKEY,                        XK_F1,     spawn,          SHCMD("setxkbmap 'ua' -option ctrl:nocaps") },
-	{MODKEY|ControlMask,            XK_F1,     spawn,          SHCMD("setxkbmap 'us' -option ctrl:nocaps") },
+	{MODKEY,                        XK_F1,     spawn,          SHCMD("my-layout-ua.sh") },
+	{MODKEY|ControlMask,            XK_F1,     spawn,          SHCMD("my-layout-us.sh") },
 	/* {MODKEY|ControlMask,            XK_F1,     spawn,          SHCMD("xkbcomp ~/myxkb.dump $DISPLAY") }, */
 	{MODKEY,                        XK_F4,     spawn,          {.v=sleepcmd}},
 	{MODKEY,                        XK_F5,     spawn,          {.v=startwificmd}},
