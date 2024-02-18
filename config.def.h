@@ -109,8 +109,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{MODKEY,                        XK_F1,     spawn,          SHCMD("my-layout-ua.sh") },
-	{MODKEY|ControlMask,            XK_F1,     spawn,          SHCMD("my-layout-us.sh") },
+	{MODKEY,                        XK_F1,     spawn,          SHCMD("my-layout.sh ua") },
+	{MODKEY|ControlMask,            XK_F1,     spawn,          SHCMD("my-layout.sh us") },
 	/* {MODKEY|ControlMask,            XK_F1,     spawn,          SHCMD("xkbcomp ~/myxkb.dump $DISPLAY") }, */
 	{MODKEY,                        XK_F4,     spawn,          {.v=sleepcmd}},
 	{MODKEY,                        XK_F5,     spawn,          {.v=startwificmd}},
